@@ -3,8 +3,8 @@ services:
     name: aegis-swarm-backend
     env: node
     plan: free
-    buildCommand: npm install --include=dev && cd backend && npx prisma generate && npx prisma db push && cd .. && npm run build -w @aegis-swarm/backend
-    startCommand: cd backend && npm start
+    buildCommand: npm install --include=dev && cd backend && npx prisma generate && npx prisma db push
+    startCommand: cd backend && npx tsx src/server.ts
     envVars:
       - key: NODE_ENV
         value: production
